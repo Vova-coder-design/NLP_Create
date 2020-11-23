@@ -1,0 +1,48 @@
+﻿<Window x:Class="NLP_Create.Form_Of_Control_EU_Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NLP_Create"
+        xmlns:design="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FF9E9E9E"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="Form_Of_Control_EU_Form" Height="550" Width="800" Loaded="Window_Loaded">
+    <Grid>
+
+        <DataGrid Name="dgForm_Of_Control_EU" HorizontalAlignment="Left" Height="267" Margin="10,242,0,0" VerticalAlignment="Top" Width="772" IsReadOnly="True" AutoGeneratingColumn="DgForm_Of_Control_EU_AutoGeneratingColumn">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+
+                </Style>
+            </DataGrid.ItemContainerStyle>
+        </DataGrid>
+
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="10,162,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.Number_Of_Semester, ElementName=dgForm_Of_Control_EU}" VerticalAlignment="Top" Width="341" x:Name ="tbNumber_Of_Semester" design:HintAssist.Hint="Номер семестра" FontFamily="Sitka Subheading" Style="{StaticResource ResourceKey=MaterialDesignDataGridTextColumnEditingStyle}" RenderTransformOrigin="0.5,0.5" />
+
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="29" Margin="10,189,0,0" Stroke="Black" VerticalAlignment="Top" Width="341" x:Name="rcForm_Of_Control_ID"/>
+        <ComboBox HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Width="328" x:Name="cbForm_Of_Control_ID" SelectedValue ="{Binding SelectedItem.Form_Of_Control_ID, ElementName=dgForm_Of_Control_EU}" design:HintAssist.Hint="Форма контроля" FontFamily="Sitka Subheading" Style="{StaticResource ResourceKey=MaterialDesignComboBox}" RenderTransformOrigin="0.5,0.5"/>
+
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="630" x:Name ="tbFindValue" design:HintAssist.Hint="Введите значение для поиска/фильтрации" FontFamily="Sitka Subheading" Style="{StaticResource ResourceKey=MaterialDesignDataGridTextColumnEditingStyle}" RenderTransformOrigin="0.5,0.5" />
+
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="76" x:Name ="btSearch" />
+
+        <Button Content="Фильтр" HorizontalAlignment="Left" Margin="91,62,0,0" VerticalAlignment="Top" Width="84" x:Name ="btFilter" />
+
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="180,62,0,0" VerticalAlignment="Top" Width="94" x:Name ="btCancel"  />
+
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="363,186,0,0" VerticalAlignment="Top" Width="100" x:Name="btInsert" />
+
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="468,186,0,0" VerticalAlignment="Top" Width="99" x:Name="btUpdate" />
+
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="572,186,0,0" VerticalAlignment="Top" Width="90" x:Name="btDelete" />
+
+
+    </Grid>
+</Window>
